@@ -17,13 +17,13 @@ public class MyDslLanguageServer extends ProcessStreamConnectionProvider {
 	public MyDslLanguageServer() {
 		final List<String> commands = new ArrayList<>();
 		URI launcherUri = locateFile("org.eclipse.lsp4e.languages.mydsl", "server/bin/mydsl-standalone");
-		System.out.println(launcherUri);
+		URI workingDirUri = locateFile("org.eclipse.lsp4e.languages.mydsl", "server/working-dir");
 		//TODO make this more elegant
 		String launcher = launcherUri.toString().substring("file:".length());
-		System.out.println(launcher);
+		String workingDir = workingDirUri.toString().substring("file:".length());
 		commands.add(launcher);
 		setCommands(commands);
-		setWorkingDirectory("/Users/dietrich/git/xtext-languageserver-example/org.xtext.example.mydsl.ide/work");
+		setWorkingDirectory(workingDir);
 	}
 
 	private static URI locateFile(String bundle, String fullPath) {

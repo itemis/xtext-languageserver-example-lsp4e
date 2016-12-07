@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MyDsl (Xtext) LSP4e Example
+Bundle-SymbolicName: org.eclipse.lsp4e.languages.mydsl;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: itemis AG
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Eclipse-BundleShape: dir
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.debug.core,
+ org.eclipse.lsp4e;bundle-version="0.1.0",
+ org.eclipse.ui,
+ org.apache.commons.io;bundle-version="2.2.0",
+ org.eclipse.core.externaltools,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors;bundle-version="3.10.0"

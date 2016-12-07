@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+       <content-type
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="mydsl"
+            id="org.eclipse.lsp4e.languages.mydsl"
+            name="MyDsl (Xtext)"
+            priority="normal">
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.presentationReconcilers">
+      <presentationReconciler
+            class="org.eclipse.lsp4e.languages.mydsl.MyDslKeywordsHighlighter"
+            contentType="org.eclipse.lsp4e.languages.mydsl">
+      </presentationReconciler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editorContentTypeBinding
+            contentTypeId="org.eclipse.lsp4e.languages.mydsl"
+            editorId="org.eclipse.ui.genericeditor.GenericEditor">
+      </editorContentTypeBinding>
+   </extension>
+   <extension
+         point="org.eclipse.lsp4e.languageServer">
+      <server
+            id="org.eclipse.lsp4e.languages.mydsl"
+            class="org.eclipse.lsp4e.languages.mydsl.MyDslLanguageServer"
+            label="MyDsl (Xtext) Language Server">
+      </server>
+      <contentTypeMapping
+            id="org.eclipse.lsp4e.languages.mydsl"
+            contentType="org.eclipse.lsp4e.languages.mydsl">
+      </contentTypeMapping>
+   </extension>
+</plugin>

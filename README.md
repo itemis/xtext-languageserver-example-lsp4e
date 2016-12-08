@@ -7,3 +7,5 @@
 1. Start Runtime Eclipse Application
 1. Create `File->New->Project...->General->Project`
 1. Create a file with extension `mydsl`
+
+On slower machines it might be necessary to increase timeout in `org.eclipse.lsp4e.ProjectSpecificLanguageServerWrapper.getServerCapabilities()`

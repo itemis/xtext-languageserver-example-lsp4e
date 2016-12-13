@@ -1,6 +1,5 @@
 package org.eclipse.lsp4e.languages.mydsl;
 
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;

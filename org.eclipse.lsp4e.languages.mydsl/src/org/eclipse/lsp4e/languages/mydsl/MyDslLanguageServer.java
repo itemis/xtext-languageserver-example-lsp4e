@@ -8,9 +8,8 @@ import java.util.List;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.lsp4e.ProcessStreamConnectionProvider;
+import org.eclipse.lsp4e.server.ProcessStreamConnectionProvider;
 
-@SuppressWarnings("restriction")
 public class MyDslLanguageServer extends ProcessStreamConnectionProvider {
 
 	public MyDslLanguageServer() {

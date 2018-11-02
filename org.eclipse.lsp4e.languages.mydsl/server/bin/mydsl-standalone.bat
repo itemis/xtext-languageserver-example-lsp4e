@@ -49,7 +49,6 @@ goto fail
 @rem Get command-line arguments, handling Windows variants
 
 if not "%OS%" == "Windows_NT" goto win9xME_args
-if "%@eval[2+2]" == "4" goto 4NT_args
 
 :win9xME_args
 @rem Slurp the command line arguments.
@@ -60,16 +59,11 @@ set _SKIP=2
 if "x%~1" == "x" goto execute
 
 set CMD_LINE_ARGS=%*
-goto execute
-
-:4NT_args
-@rem Get arguments from the 4NT Shell from JP Software
-set CMD_LINE_ARGS=%$
 
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\org.xtext.example.mydsl.ide-1.0.0-SNAPSHOT.jar;%APP_HOME%\lib\org.xtext.example.mydsl-1.0.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.xtext.ide-2.11.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.xtext.xbase.ide-2.11.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.xtext-2.11.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.xtext.xbase-2.11.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.lsp4j-0.1.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.xtext.util-2.11.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.xtend.lib-2.11.0-SNAPSHOT.jar;%APP_HOME%\lib\log4j-1.2.16.jar;%APP_HOME%\lib\org.eclipse.equinox.common-3.6.0.jar;%APP_HOME%\lib\org.eclipse.emf.common-2.11.0-v20150805-0538.jar;%APP_HOME%\lib\org.eclipse.emf.ecore.xmi-2.11.1-v20150805-0538.jar;%APP_HOME%\lib\guice-3.0.jar;%APP_HOME%\lib\antlr-runtime-3.2.jar;%APP_HOME%\lib\org.eclipse.xtext.common.types-2.11.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.lsp4j.generator-0.1.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.lsp4j.jsonrpc-0.1.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.emf.ecore-2.11.1-v20150805-0538.jar;%APP_HOME%\lib\org.eclipse.xtext.xbase.lib-2.11.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.xtend.lib.macro-2.11.0-SNAPSHOT.jar;%APP_HOME%\lib\javax.inject-1.jar;%APP_HOME%\lib\aopalliance-1.0.jar;%APP_HOME%\lib\asm-commons-5.0.1.jar;%APP_HOME%\lib\guava-18.0.jar;%APP_HOME%\lib\gson-2.7.jar;%APP_HOME%\lib\asm-tree-5.0.1.jar;%APP_HOME%\lib\asm-5.0.1.jar
+set CLASSPATH=%APP_HOME%\lib\org.xtext.example.mydsl.ide-1.0.0-SNAPSHOT.jar;%APP_HOME%\lib\org.xtext.example.mydsl-1.0.0-SNAPSHOT.jar;%APP_HOME%\lib\org.eclipse.xtext.xbase.ide-2.15.0.jar;%APP_HOME%\lib\org.eclipse.xtext.ide-2.15.0.jar;%APP_HOME%\lib\org.eclipse.xtext.xbase-2.15.0.jar;%APP_HOME%\lib\org.eclipse.xtext.common.types-2.15.0.jar;%APP_HOME%\lib\org.eclipse.xtext-2.15.0.jar;%APP_HOME%\lib\org.eclipse.emf.ecore.change-2.11.0.jar;%APP_HOME%\lib\org.eclipse.lsp4j-0.5.0.jar;%APP_HOME%\lib\org.eclipse.xtext.util-2.15.0.jar;%APP_HOME%\lib\org.eclipse.lsp4j.generator-0.5.0.jar;%APP_HOME%\lib\org.eclipse.xtend.lib-2.15.0.jar;%APP_HOME%\lib\log4j-1.2.16.jar;%APP_HOME%\lib\org.eclipse.equinox.common-3.9.0.jar;%APP_HOME%\lib\org.eclipse.osgi-3.12.100.jar;%APP_HOME%\lib\org.eclipse.emf.common-2.12.0.jar;%APP_HOME%\lib\org.eclipse.emf.ecore.xmi-2.12.0.jar;%APP_HOME%\lib\guice-3.0.jar;%APP_HOME%\lib\antlr-runtime-3.2.jar;%APP_HOME%\lib\org.eclipse.lsp4j.jsonrpc-0.5.0.jar;%APP_HOME%\lib\org.eclipse.emf.ecore-2.12.0.jar;%APP_HOME%\lib\org.eclipse.xtend.lib.macro-2.15.0.jar;%APP_HOME%\lib\org.eclipse.xtext.xbase.lib-2.15.0.jar;%APP_HOME%\lib\javax.inject-1.jar;%APP_HOME%\lib\aopalliance-1.0.jar;%APP_HOME%\lib\asm-commons-6.2.1.jar;%APP_HOME%\lib\gson-2.7.jar;%APP_HOME%\lib\guava-21.0.jar;%APP_HOME%\lib\asm-analysis-6.2.1.jar;%APP_HOME%\lib\asm-tree-6.2.1.jar;%APP_HOME%\lib\asm-6.2.1.jar
 
 @rem Execute mydsl-standalone
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %MYDSL_STANDALONE_OPTS%  -classpath "%CLASSPATH%" org.eclipse.xtext.ide.server.ServerLauncher %CMD_LINE_ARGS%
